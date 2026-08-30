@@ -38,4 +38,4 @@ velvet-vogue/
 **Hithursan**
 
 ---
-*Crafted with ❤️ for the modern connoisseur*#
+*Crafted with ❤️ for the modern connoisseu*#
