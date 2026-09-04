@@ -31,7 +31,8 @@ velvet-vogue/
 
 ## 🚀 Live Demo
 
-> Coming Soon...
+> Here's the GitHub live link for what I've completed so far. I'm still pushing the remaining work, so more updates will be live soon.
+> https://hithursan.github.io/velvet-vogue/
 
 ## 👤 Author
 
