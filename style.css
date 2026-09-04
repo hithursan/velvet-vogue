@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root[data-theme="dark"] {
+    --bg: #0a0a0a;
+    --bg2: #141414;
+    --bg3: #1a1a1a;
+    --text: #ffffff;
+    --text-muted: #bbbbbb;
+    --text-dim: #888888;
+    --pink: #ff4d94;
+    --rose: #e91e63;
+    --dark-rose: #ad1457;
+    --border: rgba(255, 77, 148, 0.2);
+    --card-bg: #141414;
+    --shadow: rgba(255, 77, 148, 0.3);
+    --nav-bg: rgba(10, 10, 10, 0.595);
+}
+
+:root[data-theme="light"] {
+    --bg: #fce8f8;
+    --bg2: background: linear-gradient(242deg, #f7f7f7 0%, #e72eff 50%, #f0f0f0 100%);
+    --bg3: #ffd4fa;
+    --text: #1a1a1a;
+    --text-muted: #555555;
+    --text-dim: #888888;
+    --pink: #d63384;
+    --rose: #c2185b;
+    --dark-rose: #880e4f;
+    --border: rgba(214, 51, 132, 0.2);
+    --card-bg: #ffffff;
+    --shadow: rgba(214, 51, 132, 0.2);
+    --nav-bg: rgba(248, 217, 245, 0.85);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    cursor: none;
+    transition: background 0.5s, color 0.5s;
+}
+
+a {
+    text-decoration: none;
+}
