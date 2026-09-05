@@ -233,3 +233,28 @@ a {
     visibility: hidden;
     transition: opacity 0.5s 1s, visibility 0.5s 0.5s;
 }
+
+/* theme toggle */
+.theme-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: var(--pink);
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: none;
+    z-index: 998;
+    box-shadow: 0 10px 30px var(--shadow);
+    transition: all 0.4s;
+    color: #fff;
+    font-size: 22px;
+}
+
+.theme-toggle:hover {
+    transform: rotate(360deg) scale(1.1);
+}

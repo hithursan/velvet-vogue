@@ -67,3 +67,26 @@ document.addEventListener('mousedown', () => {
 document.addEventListener('mouseup', () => {
     if (cursorRing) cursorRing.classList.remove('click');
 });
+
+//theme toggle
+const themeToggle = document.getElementById('themeToggle');
+const themeIcon = document.getElementById('themeIcon');
+const root = document.documentElement;
+
+const savedTheme = localStorage.getItem('theme') || 'dark';
+root.setAttribute('data-theme', savedTheme);
+if (themeIcon) {
+    themeIcon.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+}
+
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = root.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', newTheme);
+        if (themeIcon) {
+            themeIcon.className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        }
+        localStorage.setItem('theme', newTheme);
+    });
+}
