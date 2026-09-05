@@ -6,13 +6,13 @@ A modern luxury fashion e-commerce website built with pure HTML, CSS & JavaScrip
 
 ## ✨ Features
 
-- 🌙 Dark / Light Mode Toggle
-- 🛍️ Product Showcase & Categories
-- 🛒 Shopping Cart
-- 📱 Fully Responsive Design
-- ✨ Smooth Animations & Custom Cursor
-- 📬 Contact Form
-- 💌 Newsletter Subscription
+- Dark / Light Mode Toggle
+- Product Showcase & Categories
+- Shopping Cart
+- Fully Responsive Design
+- Smooth Animations & Custom Cursor
+- Contact Form
+- Newsletter Subscription
 
 ## 🛠️ Tech Stack
 
