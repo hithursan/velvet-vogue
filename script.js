@@ -128,3 +128,30 @@ if (navToggle && navLinks) {
 if (navOverlay) {
     navOverlay.addEventListener('click', closeMobileNav);
 }
+
+// smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+});
+
+// reset animations after loader
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        const heroElements = document.querySelectorAll(
+            '.hero-tag, .hero-title, .hero-title-italic, .hero-subtitle, .hero-buttons, .scroll-indicator, .brand, .nav-links li, .nav-icons i'
+        );
+        
+        heroElements.forEach(el => {
+            // Restart animation
+            el.style.animation = 'none';
+            el.offsetHeight; 
+            el.style.animation = '';
+        });
+        
+        console.log('✅ Animations restarted after loader');
+    }, 3500); 
+});
