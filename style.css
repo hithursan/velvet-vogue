@@ -440,3 +440,116 @@ a {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.1); }
 }
+
+/* mobile hamburger toggle (hidden on desktop) */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: transform 0.35s ease, opacity 0.25s ease;
+}
+
+.nav-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+.nav-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+.nav-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    z-index: 900;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+body.nav-open {
+    overflow: hidden;
+}
+
+@media (max-width: 860px) {
+    .navbar,
+    .navbar.scrolled {
+        padding: 14px 20px;
+    }
+
+    .brand {
+        font-size: 2rem;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: min(75vw, 320px);
+        height: 100vh;
+        background: var(--bg2);
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 30px;
+        padding: 100px 40px;
+        box-shadow: -10px 0 40px rgba(0, 0, 0, 0.4);
+        transition: right 0.4s ease;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        opacity: 1;
+        animation: none;
+        width: 100%;
+    }
+
+    .nav-links a {
+        font-size: 1.1rem;
+        letter-spacing: 2px;
+    }
+
+    .nav-icons {
+        gap: 15px;
+    }
+
+    .nav-icons i {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 400px) {
+    .brand { font-size: 1.6rem; }
+    .nav-links { width: 82vw; padding: 90px 30px; }
+}

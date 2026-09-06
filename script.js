@@ -98,3 +98,33 @@ window.addEventListener('scroll', () => {
         navbar.classList.toggle('scrolled', window.scrollY > 50);
     }
 });
+
+// mobile nav toggle
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.querySelector('.nav-links');
+const navOverlay = document.getElementById('navOverlay');
+
+function closeMobileNav() {
+    if (navToggle) navToggle.classList.remove('active');
+    if (navLinks) navLinks.classList.remove('active');
+    if (navOverlay) navOverlay.classList.remove('active');
+    document.body.classList.remove('nav-open');
+}
+
+if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('active');
+        navToggle.classList.toggle('active', isOpen);
+        if (navOverlay) navOverlay.classList.toggle('active', isOpen);
+        document.body.classList.toggle('nav-open', isOpen);
+    });
+
+    // close menu when a nav link is tapped
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMobileNav);
+    });
+}
+
+if (navOverlay) {
+    navOverlay.addEventListener('click', closeMobileNav);
+}
