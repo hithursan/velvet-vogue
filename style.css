@@ -998,3 +998,276 @@ body.nav-open {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
 }
+/* hero promotion */
+.promo-hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--bg);
+}
+
+.promo-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(135deg, rgba(10, 10, 15, 0.7), rgba(63, 1, 63, 0.927)),
+        url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1920') center/cover;
+    background-size: 200% 200%;
+    animation: promoBgMove 50s ease infinite;
+    z-index: 1;
+}
+
+@keyframes promoBgMove {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.promo-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 30% 40%, rgba(255, 77, 148, 0.15), transparent 50%),
+        radial-gradient(circle at 70% 60%, rgba(173, 20, 87, 0.2), transparent 50%);
+    z-index: 2;
+    animation: overlayPulse 8s ease infinite;
+}
+
+@keyframes overlayPulse {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
+}
+
+.promo-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.promo-hero:not(.in-view) .promo-hero-bg,
+.promo-hero:not(.in-view) .promo-hero-overlay,
+.promo-hero:not(.in-view) .particle,
+.promo-hero:not(.in-view) .promo-italic,
+.promo-hero:not(.in-view) .promo-percent-big {
+    animation-play-state: paused;
+}
+
+.promo-hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 800px;
+    padding: 60px 40px;
+}
+
+.promo-tag {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    letter-spacing: 6px;
+    color: var(--pink);
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    opacity: 0;
+    animation: promoFadeUp 1s ease 0.3s forwards;
+}
+
+.promo-brand {
+    font-family: 'Italiana', serif;
+    font-size: 22px;
+    color: #fff;
+    letter-spacing: 15px;
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: promoFadeUp 1s ease 0.6s forwards;
+}
+
+.promo-headline {
+    font-family: 'Italiana', serif;
+    font-size: 5rem;
+    color: #fff;
+    line-height: 1;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+    opacity: 0;
+    animation: promoFadeUp 1.2s ease 0.9s forwards;
+}
+
+.promo-italic {
+    font-family: 'Great Vibes', cursive;
+    font-size: 6rem;
+    color: var(--pink);
+    display: block;
+    line-height: 1;
+    margin-top: 10px;
+    text-shadow: 0 0 40px var(--shadow);
+    animation: promoGlow 3s ease infinite;
+}
+
+@keyframes promoGlow {
+    0%, 100% { text-shadow: 0 0 40px var(--shadow); }
+    50% { text-shadow: 0 0 60px var(--pink), 0 0 100px var(--shadow); }
+}
+
+.promo-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: #ccc;
+    font-style: italic;
+    letter-spacing: 3px;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: promoFadeUp 1s ease 1.2s forwards;
+}
+
+.promo-offer {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 40px;
+    border: 1px solid var(--pink);
+    border-radius: 60px;
+    margin-bottom: 20px;
+    background: rgba(255, 77, 148, 0.05);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    animation: promoScale 1s ease 1.5s forwards;
+}
+
+.promo-percent {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #fff;
+    letter-spacing: 3px;
+    font-weight: 500;
+}
+
+.promo-percent-big {
+    font-family: 'Italiana', serif;
+    font-size: 60px;
+    color: var(--pink);
+    line-height: 1;
+    text-shadow: 0 0 30px var(--shadow);
+    animation: percentPulse 2s ease infinite;
+}
+
+@keyframes percentPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.promo-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: #bbb;
+    font-style: italic;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+    opacity: 0;
+    animation: promoFadeUp 1s ease 1.8s forwards;
+}
+
+.promo-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 45px;
+    background: var(--pink);
+    color: #fff;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: none;
+    border-radius: 50px;
+    transition: all 0.4s;
+    opacity: 0;
+    animation: promoFadeUp 1s ease 2.1s forwards;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--shadow);
+}
+
+.promo-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.5s;
+}
+
+.promo-btn:hover::before {
+    left: 100%;
+}
+
+.promo-btn:hover {
+    background: var(--dark-rose);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px var(--shadow);
+}
+
+.promo-btn i {
+    transition: transform 0.3s;
+}
+
+.promo-btn:hover i {
+    transform: translateX(8px);
+}
+
+.promo-btn-outline {
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.promo-btn-outline:hover {
+    background: #fff;
+    color: var(--dark-rose);
+}
+
+@keyframes promoFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+        filter: blur(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes promoScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 968px) {
+    .promo-headline { font-size: 3rem; }
+    .promo-italic { font-size: 4rem; }
+    .promo-percent-big { font-size: 45px; }
+}

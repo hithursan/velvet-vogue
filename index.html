@@ -29,44 +29,46 @@
     </button>
 
         <nav class="navbar" id="navbar">
-        <div class="brand">Velvet Vogue</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="./categories.html">Collections</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="./login.html">Login</a></li>
-        </ul>
-        <div class="nav-icons">
-            <i class="fas fa-search"></i>
-            <i class="far fa-heart"></i>
-            <a href="./cart.html" class="cart-icon" style="text-decoration: none; color: inherit; position: relative;">
-                <i class="fas fa-shopping-bag"></i>
-                <span class="cart-count" id="cartCount">0</span>
-            </a>
-        </div>
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </nav>
-    <div class="nav-overlay" id="navOverlay"></div>
+            <div class="brand">Velvet Vogue</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="./categories.html">Collections</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="./login.html">Login</a></li>
+                </ul>
+
+                <div class="nav-icons">
+                    <i class="fas fa-search"></i>
+                    <i class="far fa-heart"></i>
+                    <a href="./cart.html" class="cart-icon" style="text-decoration: none; color: inherit; position: relative;">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </div>
+
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+        </nav>
+
+        <div class="nav-overlay" id="navOverlay"></div>
 
         <section class="hero" id="home">
-        <div class="hero-bg"></div>
-        <div class="hero-particles" id="particles"></div>
-        <div class="hero-content">
-            <p class="hero-tag">Autumn Winter Collection 2026</p>
-            <h1 class="hero-title">
-                TIMELESS
-                <span class="hero-title-italic">Elegance</span>
-                REDEFINED
-            </h1>
-            <p class="hero-subtitle">Where luxury meets art. Discover the extraordinary in every stitch.</p>
-            <div class="hero-buttons">
-                <a class="btn btn-primary" href="./categories.html">Shop Now</a>
-                <button class="btn btn-outline">Watch Story</button>
+            <div class="hero-bg"></div>
+            <div class="hero-particles" id="particles"></div>
+            <div class="hero-content">
+                <p class="hero-tag">Autumn Winter Collection 2026</p>
+                <h1 class="hero-title">TIMELESS
+                    <span class="hero-title-italic">Elegance</span>REDEFINED
+                </h1>
+                <p class="hero-subtitle">Where luxury meets art. Discover the extraordinary in every stitch.</p>
+                <div class="hero-buttons">
+                    <a class="btn btn-primary" href="./categories.html">Shop Now</a>
+                    <button class="btn btn-outline">Watch Story</button>
+                </div>
             </div>
         </div>
         <div class="scroll-indicator">
@@ -87,7 +89,34 @@
             <span>EXCLUSIVE DESIGNS</span><i class="fas fa-gem"></i>
         </div>
     </div>
+
+    <!-- Hero Promotion Banner -->
+    <section class="promo-hero">
+        <div class="promo-hero-bg"></div>
+        <div class="promo-hero-overlay"></div>
+        <div class="promo-particles" id="promoParticles"></div>
     
+        <div class="promo-hero-content">
+            <p class="promo-tag">✦ Limited Time Offer ✦</p>
+            <h2 class="promo-brand">VELVET VOGUE</h2>
+            <h1 class="promo-headline">The Art of
+            <span class="promo-italic">Modern Luxury</span></h1>
+            <p class="promo-subtitle">Exclusive Summer Collection 2026</p>
+
+            <div class="promo-offer">
+                <span class="promo-percent">UP TO</span>
+                <span class="promo-percent-big">40%</span>
+                <span class="promo-percent">OFF</span>
+            </div>
+
+            <p class="promo-desc">On Selected Signature Pieces</p>
+            <a class="promo-btn" href="./categories.html">
+                <span>Explore Collection</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
     <script src="./script.js"></script>
 </body>
 </html>

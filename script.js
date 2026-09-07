@@ -194,3 +194,26 @@ if ('IntersectionObserver' in window && heavySections.length) {
         io.observe(section);
     });
 }
+// promo particles
+const promoParticlesContainer = document.getElementById('promoParticles');
+
+if (promoParticlesContainer) {
+    for (let i = 0; i < 14; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        
+        particle.style.left = Math.random() * 100 + '%';
+        
+        const size = Math.random() * 4 + 2;
+        particle.style.width = size + 'px';
+        particle.style.height = size + 'px';
+        
+        const duration = Math.random() * 10 + 10;
+        particle.style.animationDuration = duration + 's';
+        
+        const delay = Math.random() * 15;
+        particle.style.animationDelay = delay + 's';
+        
+        promoParticlesContainer.appendChild(particle);
+    }
+}
