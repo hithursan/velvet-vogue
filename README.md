@@ -36,7 +36,7 @@ velvet-vogue/
 
 ## 👤 Author
 
-**Hithursan**
+**Hithursan Navaretnarasa**
 
 ---
 *Crafted with ❤️ for the modern connoisseu*#

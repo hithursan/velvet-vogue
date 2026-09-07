@@ -915,3 +915,56 @@ body.nav-open {
         letter-spacing: 4px;
     }
 }
+
+.hero-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--pink);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--pink), 0 0 20px var(--pink);
+    bottom: -20px;
+    animation-name: floatUp, twinkle;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    animation-duration: inherit, 2s;
+    will-change: transform;
+}
+
+.hero:not(.in-view) .hero-bg,
+.hero:not(.in-view) .particle {
+    animation-play-state: paused;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% {
+        transform: translateY(-100vh) translateX(50px);
+        opacity: 0;
+    }
+}
+
+@keyframes twinkle {
+    0%, 100% { 
+        box-shadow: 0 0 10px var(--pink), 0 0 20px var(--pink);
+    }
+    50% { 
+        box-shadow: 0 0 20px var(--pink), 0 0 40px var(--pink), 0 0 60px rgba(255, 77, 148, 0.5);
+    }
+}

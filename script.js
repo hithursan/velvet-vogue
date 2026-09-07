@@ -155,3 +155,42 @@ window.addEventListener('load', () => {
         console.log('✅ Animations restarted after loader');
     }, 3500); 
 });
+// particles
+const particlesContainer = document.getElementById('particles');
+
+if (particlesContainer) {
+    for (let i = 0; i < 18; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        
+        particle.style.left = Math.random() * 100 + '%';
+        
+        const size = Math.random() * 5 + 3;
+        particle.style.width = size + 'px';
+        particle.style.height = size + 'px';
+        
+        const duration = Math.random() * 10 + 8;
+        particle.style.animationDuration = duration + 's';
+        
+        const delay = Math.random() * 15;
+        particle.style.animationDelay = delay + 's';
+        
+        particlesContainer.appendChild(particle);
+    }
+    console.log('✅ Particles created:', particlesContainer.children.length);
+}
+
+const heavySections = document.querySelectorAll('.hero, .promo-hero');
+
+if ('IntersectionObserver' in window && heavySections.length) {
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            entry.target.classList.toggle('in-view', entry.isIntersecting);
+        });
+    }, { threshold: 0.01 });
+
+    heavySections.forEach(section => {
+        section.classList.add('in-view'); // visible on first load
+        io.observe(section);
+    });
+}
