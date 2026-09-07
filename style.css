@@ -968,3 +968,33 @@ body.nav-open {
         box-shadow: 0 0 20px var(--pink), 0 0 40px var(--pink), 0 0 60px rgba(255, 77, 148, 0.5);
     }
 }
+
+.marquee {
+    padding: 10px 0;
+    background: #ff4d945f;
+    overflow: hidden;
+    backdrop-filter: blur(1px);
+}
+
+.marquee-content {
+    display: flex;
+    gap: 60px;
+    animation: scroll 40s linear infinite;
+    white-space: nowrap;
+}
+.marquee-content span {
+    font-family: 'Italiana', serif;
+    font-size: 36px;
+    color: var(--text);
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+.marquee-content i {
+    font-size: 42px;
+    align-self: center;
+    color: var(--text);
+}
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
