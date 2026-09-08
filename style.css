@@ -1499,3 +1499,75 @@ body.nav-open {
     .promo-cards-section { padding: 60px 20px; }
     .promo-card-featured { transform: translateY(0); }
 }
+/* seasonal banner */
+.promo-seasonal {
+    min-height: 500px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 80px 40px;
+}
+
+.promo-seasonal-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(135deg, rgba(10, 10, 15, 0.85), rgba(45, 27, 46, 0.85)),
+        radial-gradient(circle at center, var(--dark-rose), #0a0a0a);
+    z-index: 1;
+}
+
+.promo-seasonal-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 700px;
+}
+
+.promo-seasonal-tag {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    letter-spacing: 6px;
+    color: var(--pink);
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.promo-seasonal-title {
+    font-family: 'Italiana', serif;
+    font-size: 4.5rem;
+    color: #fff;
+    line-height: 1;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+}
+
+.promo-seasonal-italic {
+    font-family: 'Great Vibes', cursive;
+    color: var(--pink);
+    display: block;
+    font-size: 5.5rem;
+    line-height: 1;
+    text-shadow: 0 0 30px var(--shadow);
+}
+
+.promo-seasonal-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: #ccc;
+    font-style: italic;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 968px) {
+    .promo-seasonal-title { font-size: 2.5rem; }
+    .promo-seasonal-italic { font-size: 3rem; }
+    .promo-seasonal-desc { font-size: 16px; }
+}
