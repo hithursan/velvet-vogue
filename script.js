@@ -217,3 +217,26 @@ if (promoParticlesContainer) {
         promoParticlesContainer.appendChild(particle);
     }
 }
+// cta particle
+const ctaParticlesContainer = document.getElementById('ctaParticles');
+
+if (ctaParticlesContainer) {
+    for (let i = 0; i < 25; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        
+        particle.style.left = Math.random() * 100 + '%';
+        
+        const size = Math.random() * 4 + 2;
+        particle.style.width = size + 'px';
+        particle.style.height = size + 'px';
+        
+        const duration = Math.random() * 12 + 10;
+        particle.style.animationDuration = duration + 's';
+        
+        const delay = Math.random() * 15;
+        particle.style.animationDelay = delay + 's';
+        
+        ctaParticlesContainer.appendChild(particle);
+    }
+}
