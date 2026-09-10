@@ -240,3 +240,37 @@ if (ctaParticlesContainer) {
         ctaParticlesContainer.appendChild(particle);
     }
 }
+// about stats count-up
+const statNumbers = document.querySelectorAll('.stat-number');
+
+const countUp = (element) => {
+    const target = parseInt(element.getAttribute('data-count'));
+    const duration = 2000;
+    const step = target / (duration / 16);
+    let current = 0;
+    
+    const timer = setInterval(() => {
+        current += step;
+        if (current >= target) {
+            element.textContent = target;
+            clearInterval(interval);
+        } else {
+            element.textContent = Math.floor(current);
+        }
+    }, 16);
+};
+
+// Trigger count-up when stats come into view
+const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            statNumbers.forEach(stat => countUp(stat));
+            statsObserver.disconnect();
+        }
+    });
+}, { threshold: 0.5 });
+
+const aboutStats = document.querySelector('.about-stats');
+if (aboutStats) {
+    statsObserver.observe(aboutStats);
+}
