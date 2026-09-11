@@ -3224,3 +3224,123 @@ body.nav-open {
     .about-story-text { font-size: 18px; }
     .about-signature { font-size: 2rem; }
 }
+/* mission vision */
+.about-mv {
+    padding: 130px 60px;
+    background: var(--bg);
+    position: relative;
+}
+
+.about-mv-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.about-mv-title {
+    font-family: 'Italiana', serif;
+    font-size: 5rem;
+    color: var(--text);
+    line-height: 1;
+    letter-spacing: 3px;
+    margin-top: 20px;
+}
+
+.about-mv-title .about-italic {
+    font-size: 6rem;
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.about-mv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mv-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 60px 45px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+
+.mv-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--pink), transparent);
+    transform: scaleX(0);
+    transition: transform 0.5s;
+}
+
+.mv-card:hover {
+    transform: translateY(-15px);
+    border-color: var(--pink);
+    box-shadow: 0 30px 60px var(--shadow);
+}
+
+.mv-card:hover::before {
+    transform: scaleX(1);
+}
+
+.mv-card-icon {
+    width: 90px;
+    height: 90px;
+    border: 2px solid var(--pink);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--pink);
+    font-size: 36px;
+    margin: 0 auto 30px;
+    transition: all 0.4s;
+    box-shadow: 0 0 30px var(--shadow);
+}
+
+.mv-card:hover .mv-card-icon {
+    background: var(--pink);
+    color: #fff;
+    transform: rotate(360deg) scale(1.1);
+}
+
+.mv-card-title {
+    font-family: 'Italiana', serif;
+    font-size: 2.2rem;
+    color: var(--text);
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.mv-card-line {
+    width: 60px;
+    height: 2px;
+    background: var(--pink);
+    margin: 0 auto 25px;
+}
+
+.mv-card-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: var(--text-muted);
+    line-height: 1.8;
+    font-style: italic;
+    font-weight: 300;
+}
+
+@media (max-width: 968px) {
+    .about-mv { padding: 80px 20px; }
+    .about-mv-title { font-size: 2.8rem; }
+    .about-mv-title .about-italic { font-size: 3.5rem; }
+    .about-mv-grid { grid-template-columns: 1fr; gap: 30px; }
+    .mv-card { padding: 40px 25px; }
+}
