@@ -260,7 +260,6 @@ const countUp = (element) => {
     }, 16);
 };
 
-// Trigger count-up when stats come into view
 const statsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {

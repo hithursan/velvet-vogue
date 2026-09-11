@@ -3107,3 +3107,120 @@ body.nav-open {
     .stat-number { font-size: 2.5rem; }
     .about-image-small { width: 50%; height: 300px; }
 }
+/* brand story */
+.about-story {
+    padding: 150px 40px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.about-story-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(135deg, #0a0a0a 0%, #1a0a15 40%, #2d1b2e 70%, #0a0a0a 100%);
+    background-size: 200% 200%;
+    animation: ctaBgMove 20s ease infinite;
+    z-index: 1;
+}
+
+.about-story-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 30% 40%, rgba(255, 77, 148, 0.15), transparent 50%),
+        radial-gradient(circle at 70% 60%, rgba(173, 20, 87, 0.2), transparent 50%);
+    z-index: 2;
+}
+
+.about-story-content {
+    position: relative;
+    z-index: 10;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-story-title {
+    font-family: 'Italiana', serif;
+    font-size: 5rem;
+    color: #fff;
+    line-height: 1.1;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.about-story-title .about-italic {
+    font-size: 6rem;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.about-story-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    max-width: 250px;
+    margin: 40px auto;
+}
+
+.story-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--pink), transparent);
+}
+
+.about-story-divider i {
+    color: var(--pink);
+    font-size: 16px;
+    animation: gemSpin 4s ease infinite;
+}
+
+.about-story-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: #d0d0d0;
+    line-height: 1.9;
+    margin-bottom: 25px;
+    font-weight: 300;
+}
+
+.about-story-text em {
+    color: var(--pink);
+    font-style: italic;
+    font-weight: 400;
+}
+
+.about-signature {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    color: var(--pink);
+    margin-top: 50px;
+    line-height: 1.3;
+    text-shadow: 0 0 30px var(--shadow);
+    animation: aboutGlow 3s ease infinite;
+}
+
+.about-signature-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: #999;
+    text-transform: uppercase;
+    margin-top: 15px;
+}
+
+@media (max-width: 968px) {
+    .about-story { padding: 80px 20px; }
+    .about-story-title { font-size: 2.8rem; }
+    .about-story-title .about-italic { font-size: 3.5rem; }
+    .about-story-text { font-size: 18px; }
+    .about-signature { font-size: 2rem; }
+}
