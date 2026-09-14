@@ -273,3 +273,40 @@ const aboutStats = document.querySelector('.about-stats');
 if (aboutStats) {
     statsObserver.observe(aboutStats);
 }
+// contact form validation and submission
+const contactForm = document.getElementById('contactForm');
+const formSuccess = document.getElementById('formSuccess');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Get form values
+        const fullName = document.getElementById('fullName').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value.trim();
+        
+        // Simple validation
+        if (!fullName || !email || !subject || !message) {
+            alert('⚠️ Please fill in all required fields');
+            return;
+        }
+        
+        // Email validation
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+            alert('⚠️ Please enter a valid email address');
+            return;
+        }
+        
+        formSuccess.classList.add('show');
+        
+        setTimeout(() => {
+            contactForm.reset();
+            formSuccess.classList.remove('show');
+        }, 4000);
+        
+        console.log('✅ Form submitted:', { fullName, email, subject, message });
+    });
+}
