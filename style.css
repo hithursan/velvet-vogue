@@ -4021,3 +4021,276 @@ body.nav-open {
     .hours-content p { flex-direction: column; gap: 5px; }
     .hours-divider { display: none; }
 }
+/* contact form */
+.contact-form-section {
+    padding: 100px 60px;
+    background: var(--bg2);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-form-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 10% 90%, var(--shadow), transparent 40%),
+        radial-gradient(circle at 90% 10%, var(--shadow), transparent 40%);
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.contact-form-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+    position: relative;
+    z-index: 2;
+}
+
+.contact-form-wrapper {
+    padding: 60px 50px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-form-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--pink), transparent);
+}
+
+.contact-form-tag {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    letter-spacing: 5px;
+    color: var(--pink);
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.contact-form-title {
+    font-family: 'Italiana', serif;
+    font-size: 3rem;
+    color: var(--text);
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    line-height: 1.1;
+}
+
+.contact-form-title .contact-italic {
+    font-size: 3.5rem;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.contact-form-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-group-full {
+    grid-column: 1 / -1;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 15px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.3s;
+    letter-spacing: 1px;
+    cursor: none;
+}
+
+.form-group select {
+    cursor: none;
+    appearance: none;
+    padding-right: 30px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23ff4d94' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+.form-group select option {
+    background: var(--bg);
+    color: var(--text);
+    padding: 10px;
+}
+
+.form-group textarea {
+    resize: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-group label {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    color: var(--text-dim);
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    pointer-events: none;
+    transition: all 0.3s;
+}
+
+.form-group input:focus ~ label,
+.form-group input:valid ~ label,
+.form-group select:focus ~ label,
+.form-group select:valid ~ label,
+.form-group textarea:focus ~ label,
+.form-group textarea:valid ~ label {
+    top: -12px;
+    font-size: 10px;
+    color: var(--pink);
+    letter-spacing: 3px;
+}
+
+.form-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--pink);
+    transition: width 0.4s;
+}
+
+.form-group input:focus ~ .form-line,
+.form-group select:focus ~ .form-line,
+.form-group textarea:focus ~ .form-line {
+    width: 100%;
+}
+
+.form-submit-btn {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 45px;
+    background: var(--pink);
+    color: #fff;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: none;
+    border-radius: 50px;
+    transition: all 0.4s;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--shadow);
+}
+
+.form-submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.5s;
+}
+
+.form-submit-btn:hover::before {
+    left: 100%;
+}
+
+.form-submit-btn:hover {
+    background: var(--dark-rose);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px var(--shadow);
+}
+
+.form-submit-btn i {
+    transition: transform 0.3s;
+}
+
+.form-submit-btn:hover i {
+    transform: translateX(8px) rotate(-15deg);
+}
+
+.form-success {
+    display: none;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(255, 77, 148, 0.05));
+    border: 1px solid #2ecc71;
+    border-radius: 8px;
+    color: #2ecc71;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    animation: successPop 0.5s ease;
+}
+
+.form-success.show {
+    display: flex;
+}
+
+.form-success i {
+    font-size: 24px;
+}
+
+@keyframes successPop {
+    0% { opacity: 0; transform: translateY(-20px) scale(0.9); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 968px) {
+    .contact-form-container { grid-template-columns: 1fr; gap: 40px; }
+    .contact-form-wrapper { padding: 40px 25px; }
+    .contact-form-title { font-size: 2rem; }
+    .contact-form-title .contact-italic { font-size: 2.5rem; }
+    .form-row { grid-template-columns: 1fr; gap: 25px; }
+}
