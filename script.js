@@ -310,3 +310,23 @@ if (contactForm) {
         console.log('✅ Form submitted:', { fullName, email, subject, message });
     });
 }
+// newsletter form validation and submission
+const newsletterForm = document.getElementById('newsletterForm');
+
+if (newsletterForm) {
+    newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = newsletterForm.querySelector('input[type="email"]').value.trim();
+        
+        // Validate
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+            alert('⚠️ Please enter a valid email address');
+            return;
+        }
+        
+        // Success
+        alert('✨ Thank you for subscribing! Check your email for 10% off code.');
+        newsletterForm.reset();
+    });
+}
