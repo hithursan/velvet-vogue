@@ -330,3 +330,35 @@ if (newsletterForm) {
         newsletterForm.reset();
     });
 }
+// up bottom button
+const backToTopBtn = document.getElementById('backToTop');
+
+if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+// cart count in navbar
+function updateNavbarCartCount() {
+    const cart = JSON.parse(localStorage.getItem('velvetVogueCart') || '[]');
+    const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+    const cartCountEl = document.getElementById('cartCount');
+    if (cartCountEl) {
+        cartCountEl.textContent = count;
+    }
+}
+
+// Run on page load
+document.addEventListener('DOMContentLoaded', updateNavbarCartCount);
