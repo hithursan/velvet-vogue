@@ -46,3 +46,57 @@ body {
     cursor: none;
     transition: background 0.5s, color 0.5s;
 }
+.cursor-dot {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background: var(--pink);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s;
+    box-shadow: 0 0 15px var(--pink);
+}
+
+.cursor-ring {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--pink);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99998;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s cubic-bezier(0.75, -1.27, 0.3, 2.33), height 0.4s cubic-bezier(0.75, -1.27, 0.3, 2.33);
+}
+
+.cursor-ring.hover {
+    width: 70px;
+    height: 70px;
+    background: rgba(255, 77, 148, 0.15);
+}
+
+.cursor-dot.hover { width: 0; height: 0; }
+
+.theme-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 55px;
+    height: 55px;
+    background: var(--pink);
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: none;
+    z-index: 998;
+    box-shadow: 0 10px 30px var(--shadow);
+    transition: all 0.4s;
+    color: #fff;
+    font-size: 20px;
+}
+
+.theme-toggle:hover { transform: rotate(360deg) scale(1.1); }
