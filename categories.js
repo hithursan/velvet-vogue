@@ -64,3 +64,22 @@ if (catParticles) {
         catParticles.appendChild(particle);
     }
 }
+let currentFilters = {
+    category: 'all',
+    maxPrice: 500,
+    sizes: [],
+    colors: [],
+    onSale: false,
+    isNew: false,
+    limited: false,
+    search: ''
+};
+
+document.querySelectorAll('.category-item').forEach(item => {
+    item.addEventListener('click', () => {
+        document.querySelectorAll('.category-item').forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+        currentFilters.category = item.dataset.category;
+        if (typeof filterProducts === 'function') filterProducts();
+    });
+});
