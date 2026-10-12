@@ -354,3 +354,68 @@ body {
     text-transform: uppercase;
     font-weight: 500;
 }
+.search-section {
+    padding: 40px 60px;
+    background: var(--bg);
+}
+
+.search-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    padding: 5px 20px 5px 25px;
+    transition: all 0.3s;
+}
+
+.search-wrapper:focus-within {
+    border-color: var(--pink);
+    box-shadow: 0 0 30px var(--shadow);
+}
+
+.search-wrapper > i {
+    color: var(--pink);
+    font-size: 16px;
+    margin-right: 15px;
+}
+
+.search-wrapper input {
+    flex: 1;
+    padding: 15px 10px;
+    background: transparent;
+    border: none;
+    color: var(--text);
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    outline: none;
+    cursor: none;
+}
+
+.search-wrapper input::placeholder {
+    color: var(--text-dim);
+}
+
+.search-clear {
+    background: transparent;
+    border: none;
+    color: var(--text-dim);
+    padding: 8px;
+    cursor: none;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.search-clear.show {
+    opacity: 1;
+}
+
+.search-clear:hover {
+    color: var(--pink);
+}
