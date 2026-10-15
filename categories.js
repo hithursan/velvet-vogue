@@ -1,3 +1,17 @@
+const productsData = {
+    '1': { name: 'Midnight Prestige Suit', image: './products/product_1/img_1.jpg', price: 'LKR 24,999' },
+    '2': { name: 'Royal Noir Evening Gown', image: './products/product_2/img_1.jpg', price: 'LKR 29,999' },
+    '3': { name: 'Classic Elite Blazer', image: './products/product_3/img_1.jpg', price: 'LKR 18,999' },
+    '4': { name: 'Velvet Luxe Handbag', image: './products/product_4/img_1.jpg', price: 'LKR 15,999' },
+    '5': { name: 'Ivory Silk Dress', image: './products/product_5/img_1.jpg', price: 'LKR 19,999' },
+    '6': { name: 'Executive Black Tuxedo', image: './products/product_6/img_1.jpg', price: 'LKR 34,999' },
+    '7': { name: 'Pink Blossom Top', image: './products/product_7/img_1.jpg', price: 'LKR 8,999' },
+    '8': { name: 'Gold Cascade Necklace', image: './products/product_8/img_1.jpg', price: 'LKR 12,999' },
+    '9': { name: 'Ocean Blue Casual Shirt', image: './products/product_9/img_1.jpg', price: 'LKR 7,999' },
+    '10': { name: 'Scarlet Rose Gown', image: './products/product_10/img_1.jpg', price: 'LKR 39,999' },
+    '11': { name: 'Pearl White Formal Shirt', image: './products/product_11/img_1.jpg', price: 'LKR 10,999' },
+    '12': { name: 'Diamond Elite Suit', image: './products/product_12/img_1.jpg', price: 'LKR 45,999' }
+};
 const cursorDot = document.getElementById('cursorDot');
 const cursorRing = document.getElementById('cursorRing');
 let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
