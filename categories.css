@@ -647,3 +647,76 @@ body {
     font-size: 14px;
     text-shadow: 0 0 3px #000;
 }
+.filter-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    cursor: none;
+    color: var(--text-muted);
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.filter-checkbox input {
+    position: absolute;
+    opacity: 0;
+}
+
+.filter-checkbox .checkmark {
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--pink);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.filter-checkbox input:checked ~ .checkmark {
+    background: var(--pink);
+}
+
+.filter-checkbox .checkmark::after {
+    content: '';
+    width: 5px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg) scale(0);
+    margin-top: -3px;
+    transition: transform 0.3s;
+}
+
+.filter-checkbox input:checked ~ .checkmark::after {
+    transform: rotate(45deg) scale(1);
+}
+
+.clear-filters-btn {
+    width: 100%;
+    padding: 12px 20px;
+    background: transparent;
+    color: var(--pink);
+    border: 1px solid var(--pink);
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: none;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.clear-filters-btn:hover {
+    background: var(--pink);
+    color: #fff;
+    box-shadow: 0 10px 25px var(--shadow);
+}

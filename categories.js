@@ -121,3 +121,70 @@ document.querySelectorAll('.color-btn').forEach(btn => {
         if (typeof filterProducts === 'function') filterProducts();
     });
 });
+
+const onSaleFilter = document.getElementById('onSaleFilter');
+const newFilter = document.getElementById('newFilter');
+const limitedFilter = document.getElementById('limitedFilter');
+
+if (onSaleFilter) {
+    onSaleFilter.addEventListener('change', (e) => {
+        currentFilters.onSale = e.target.checked;
+        if (typeof filterProducts === 'function') filterProducts();
+    });
+}
+
+if (newFilter) {
+    newFilter.addEventListener('change', (e) => {
+        currentFilters.isNew = e.target.checked;
+        if (typeof filterProducts === 'function') filterProducts();
+    });
+}
+
+if (limitedFilter) {
+    limitedFilter.addEventListener('change', (e) => {
+        currentFilters.limited = e.target.checked;
+        if (typeof filterProducts === 'function') filterProducts();
+    });
+}
+
+const clearFiltersBtn = document.getElementById('clearFilters');
+
+if (clearFiltersBtn) {
+    clearFiltersBtn.addEventListener('click', () => {
+        currentFilters = {
+            category: 'all',
+            maxPrice: 500,
+            sizes: [],
+            colors: [],
+            onSale: false,
+            isNew: false,
+            limited: false,
+            search: ''
+        };
+        
+        // Reset UI
+        document.querySelectorAll('.category-item').forEach(i => i.classList.remove('active'));
+        const allCat = document.querySelector('.category-item[data-category="all"]');
+        if (allCat) allCat.classList.add('active');
+        
+        if (priceSlider) {
+            priceSlider.value = 500;
+            if (priceMax) priceMax.textContent = 500;
+        }
+        document.querySelectorAll('.size-btn.active').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.color-btn.active').forEach(b => b.classList.remove('active'));
+        if (onSaleFilter) onSaleFilter.checked = false;
+        if (newFilter) newFilter.checked = false;
+        if (limitedFilter) limitedFilter.checked = false;
+        
+        const searchInput = document.getElementById('searchInput');
+        const searchClear = document.getElementById('searchClear');
+        if (searchInput) searchInput.value = '';
+        if (searchClear) searchClear.classList.remove('show');
+        
+        const sortSelect = document.getElementById('sortSelect');
+        if (sortSelect) sortSelect.value = 'default';
+        
+        if (typeof filterProducts === 'function') filterProducts();
+    });
+}
