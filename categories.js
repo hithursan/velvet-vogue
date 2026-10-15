@@ -12,6 +12,7 @@ const productsData = {
     '11': { name: 'Pearl White Formal Shirt', image: './products/product_11/img_1.jpg', price: 'LKR 10,999' },
     '12': { name: 'Diamond Elite Suit', image: './products/product_12/img_1.jpg', price: 'LKR 45,999' }
 };
+
 const cursorDot = document.getElementById('cursorDot');
 const cursorRing = document.getElementById('cursorRing');
 let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
@@ -258,4 +259,13 @@ if (listViewBtn) {
         listViewBtn.classList.add('active');
         if (gridViewBtn) gridViewBtn.classList.remove('active');
     });
+}
+const productsGrid = document.getElementById('productsGrid');
+const allProducts = document.querySelectorAll('.product-item');
+const showingCount = document.getElementById('showingCount');
+const totalCount = document.getElementById('totalCount');
+const noProducts = document.getElementById('noProducts');
+
+if (totalCount && allProducts.length) {
+    totalCount.textContent = allProducts.length;
 }
