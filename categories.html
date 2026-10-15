@@ -118,6 +118,39 @@
             </ul>
 
         </aside>
+                <!-- Products Main Area Container -->
+        <div class="cat-products-area">
+            
+            <!-- Toolbar -->
+            <div class="products-toolbar">
+                <div class="products-count">
+                    Showing <span id="showingCount">12</span> of <span id="totalCount">12</span> products
+                </div>
+                
+                <div class="toolbar-right">
+                    <div class="sort-wrapper">
+                        <label>Sort By:</label>
+                        <select id="sortSelect">
+                            <option value="default">Featured</option>
+                            <option value="newest">Newest First</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rating">Best Rated</option>
+                        </select>
+                    </div>
+                    
+                    <div class="view-toggle">
+                        <button class="view-btn active" data-view="grid" id="gridView">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button class="view-btn" data-view="list" id="listView">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
                     <!-- Price Range Filter -->
             <div class="filter-block">

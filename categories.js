@@ -188,3 +188,60 @@ if (clearFiltersBtn) {
         if (typeof filterProducts === 'function') filterProducts();
     });
 }
+let currentSort = 'default';
+
+const sortSelect = document.getElementById('sortSelect');
+
+if (sortSelect) {
+    sortSelect.addEventListener('change', (e) => {
+        currentSort = e.target.value;
+        const productsGrid = document.getElementById('productsGrid');
+        const allProducts = document.querySelectorAll('.product-item');
+        if (!productsGrid || !allProducts.length) return;
+
+        const productsArray = Array.from(allProducts);
+        
+        productsArray.sort((a, b) => {
+            const priceA = parseInt(a.dataset.price);
+            const priceB = parseInt(b.dataset.price);
+            
+            switch (currentSort) {
+                case 'price-low':
+                    return priceA - priceB;
+                case 'price-high':
+                    return priceB - priceA;
+                case 'newest':
+                    return (a.dataset.badge === 'new' ? -1 : 1);
+                case 'rating':
+                    const ratingA = a.querySelectorAll('.product-rating .fas.fa-star').length;
+                    const ratingB = b.querySelectorAll('.product-rating .fas.fa-star').length;
+                    return ratingB - ratingA;
+                default:
+                    return 0;
+            }
+        });
+        
+        productsArray.forEach(product => productsGrid.appendChild(product));
+    });
+}
+
+const gridViewBtn = document.getElementById('gridView');
+const listViewBtn = document.getElementById('listView');
+
+if (gridViewBtn) {
+    gridViewBtn.addEventListener('click', () => {
+        const productsGrid = document.getElementById('productsGrid');
+        if (productsGrid) productsGrid.classList.remove('list-view');
+        gridViewBtn.classList.add('active');
+        if (listViewBtn) listViewBtn.classList.remove('active');
+    });
+}
+
+if (listViewBtn) {
+    listViewBtn.addEventListener('click', () => {
+        const productsGrid = document.getElementById('productsGrid');
+        if (productsGrid) productsGrid.classList.add('list-view');
+        listViewBtn.classList.add('active');
+        if (gridViewBtn) gridViewBtn.classList.remove('active');
+    });
+}
