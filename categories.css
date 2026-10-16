@@ -822,3 +822,294 @@ body {
     color: #fff;
     border-color: var(--pink);
 }
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.products-grid.list-view {
+    grid-template-columns: 1fr;
+}
+
+.products-grid.list-view .product-item {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 25px;
+}
+
+.products-grid.list-view .product-img {
+    height: 300px;
+}
+
+.product-item {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: productReveal 0.6s ease forwards;
+}
+
+.product-item:hover {
+    transform: translateY(-10px);
+    border-color: var(--pink);
+    box-shadow: 0 25px 50px var(--shadow);
+}
+
+.product-item.hide {
+    display: none;
+}
+
+@keyframes productReveal {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.product-img {
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;  
+    transition: transform 0.7s;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+}
+
+.product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.product-item:hover .product-img {
+    transform: scale(1.05);
+}
+
+.badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 6px 15px;
+    border-radius: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+    z-index: 5;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.badge.new { background: linear-gradient(135deg, var(--pink), var(--dark-rose)); }
+.badge.limited { background: linear-gradient(135deg, #d4af37, #b8860b); animation: shine 2s ease infinite; }
+.badge.sale { background: linear-gradient(135deg, #e91e63, #c2185b); }
+.badge.hot { background: linear-gradient(135deg, #ff4d94, #ff1744); animation: pulse 2s ease infinite; }
+
+@keyframes shine {
+    0%, 100% { box-shadow: 0 5px 15px rgba(212, 175, 55, 0.5); }
+    50% { box-shadow: 0 5px 25px rgba(212, 175, 55, 0.9); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.product-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.product-item:hover .product-overlay {
+    opacity: 1;
+}
+
+.overlay-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #fff;
+    border: none;
+    color: #0a0a0a;
+    font-size: 14px;
+    cursor: none;
+    transition: all 0.3s;
+    transform: translateY(20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-item:hover .overlay-btn {
+    transform: translateY(0);
+}
+
+.overlay-btn:hover {
+    background: var(--pink);
+    color: #fff;
+    transform: translateY(-5px) scale(1.1);
+}
+
+.wishlist-btn.active {
+    background: var(--pink);
+    color: #fff;
+    animation: heartPop 0.5s ease;
+}
+
+@keyframes heartPop {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+}
+
+.product-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.product-cat {
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--pink);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.product-title {
+    font-family: 'Italiana', serif;
+    font-size: 20px;
+    color: var(--text);
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    line-height: 1.3;
+}
+
+.product-rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    color: var(--pink);
+    font-size: 11px;
+    margin-bottom: 15px;
+}
+
+.product-rating span {
+    color: var(--text-dim);
+    margin-left: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+}
+
+.product-price-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 10px;
+}
+
+.product-price {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 22px;
+    color: var(--pink);
+    font-weight: 700;
+}
+
+.product-price-old {
+    color: var(--text-dim);
+    text-decoration: line-through;
+    font-size: 14px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.no-products {
+    display: none;
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--text-muted);
+}
+
+.no-products.show {
+    display: block;
+}
+
+.no-products i {
+    font-size: 60px;
+    color: var(--pink);
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.no-products h3 {
+    font-family: 'Italiana', serif;
+    font-size: 2rem;
+    color: var(--text);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.no-products p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-style: italic;
+    margin-bottom: 25px;
+}
+
+.no-products .clear-filters-btn {
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+.load-more-wrapper {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.load-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 40px;
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--pink);
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: none;
+    transition: all 0.4s;
+    position: relative;
+    overflow: hidden;
+}
+
+.load-more-btn:hover {
+    background: var(--pink);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px var(--shadow);
+}
+
+.load-more-btn i {
+    transition: transform 0.3s;
+}
+
+.load-more-btn:hover i {
+    transform: translateY(3px);
+}

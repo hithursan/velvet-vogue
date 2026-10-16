@@ -269,3 +269,24 @@ const noProducts = document.getElementById('noProducts');
 if (totalCount && allProducts.length) {
     totalCount.textContent = allProducts.length;
 }
+document.querySelectorAll('.wishlist-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        btn.classList.toggle('active');
+        const icon = btn.querySelector('i');
+        if (btn.classList.contains('active')) {
+            icon.classList.remove('far');
+            icon.classList.add('fas');
+        } else {
+            icon.classList.remove('fas');
+            icon.classList.add('far');
+        }
+    });
+});
+
+const loadMoreBtn = document.querySelector('.load-more-btn');
+if (loadMoreBtn) {
+    loadMoreBtn.addEventListener('click', () => {
+        alert('✨ More products coming soon!');
+    });
+}
