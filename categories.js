@@ -544,3 +544,33 @@ document.querySelectorAll('.modal-sizes .size-btn').forEach(btn => {
         btn.classList.add('active');
     });
 });
+
+// --- Mobile Filter Drawer Logic ---
+const mobileFilterBtn = document.querySelector('.mobile-filter-btn');
+const sidebarClose = document.querySelector('.sidebar-close');
+const sidebarOverlay = document.querySelector('.sidebar-overlay');
+const catSidebar = document.querySelector('.cat-sidebar');
+
+if (mobileFilterBtn) {
+    mobileFilterBtn.addEventListener('click', () => {
+        catSidebar.classList.add('open');
+        sidebarOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scroll
+    });
+}
+
+const closeSidebar = () => {
+    catSidebar.classList.remove('open');
+    sidebarOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+};
+
+if (sidebarClose) sidebarClose.addEventListener('click', closeSidebar);
+if (sidebarOverlay) sidebarOverlay.addEventListener('click', closeSidebar);
+
+// Close sidebar on window resize if it's open
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 1024 && catSidebar.classList.contains('open')) {
+        closeSidebar();
+    }
+});
