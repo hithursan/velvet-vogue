@@ -10,7 +10,7 @@
 </head>
 <body>
 
-        <!-- Custom Cursor -->
+    <!-- Custom Cursor -->
     <div class="cursor-ring" id="cursorRing"></div>
     <div class="cursor-dot" id="cursorDot"></div>
 
@@ -19,7 +19,8 @@
         <i class="fas fa-sun" id="themeIcon"></i>
     </button>
 
-        <nav class="navbar" id="navbar">
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
         <a href="index.html" class="brand" style="text-decoration: none;">Velvet Vogue</a>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
@@ -38,7 +39,9 @@
             </a>
         </div>
     </nav>
-        <section class="cat-hero">
+
+    <!-- Hero Section -->
+    <section class="cat-hero">
         <div class="cat-hero-bg"></div>
         <div class="cat-hero-overlay"></div>
         <div class="cat-particles" id="catParticles"></div>
@@ -53,7 +56,6 @@
                 Refined styles curated for every occasion. Discover timeless elegance in every piece.
             </p>
             
-            <!-- Breadcrumb -->
             <div class="breadcrumb">
                 <a href="index.html">Home</a>
                 <i class="fas fa-chevron-right"></i>
@@ -61,7 +63,9 @@
             </div>
         </div>
     </section>
-        <section class="search-section">
+
+    <!-- Search Section -->
+    <section class="search-section">
         <div class="search-container">
             <div class="search-wrapper">
                 <i class="fas fa-search"></i>
@@ -72,7 +76,9 @@
             </div>
         </div>
     </section>
-        <section class="cat-main">
+
+    <!-- Main Categories & Products Section -->
+    <section class="cat-main">
         
         <!-- Mobile Filter Toggle -->
         <button class="mobile-filter-btn" id="mobileFilterBtn">
@@ -80,6 +86,10 @@
             <span>Filters</span>
         </button>
 
+        <!-- Sidebar Background Overlay (Mobile) -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <!-- Sidebar (Filters) -->
         <aside class="cat-sidebar" id="catSidebar">
             <button class="sidebar-close" id="sidebarClose">
                 <i class="fas fa-times"></i>
@@ -117,8 +127,78 @@
                 </li>
             </ul>
 
+            <!-- Price Range Filter -->
+            <div class="filter-block">
+                <h3 class="filter-title">
+                    <i class="fas fa-tag"></i> Price Range
+                </h3>
+                <div class="price-range">
+                    <div class="price-values">
+                        <span>LKR <span id="priceMin">0</span></span>
+                        <span>LKR <span id="priceMax">100,000</span></span>
+                    </div>
+                    <input type="range" min="0" max="100000" value="100000" class="price-slider" id="priceSlider">
+                </div>
+            </div>
+
+            <!-- Size Filter -->
+            <div class="filter-block">
+                <h3 class="filter-title">
+                    <i class="fas fa-ruler"></i> Size
+                </h3>
+                <div class="size-options">
+                    <button class="size-btn" data-size="S">S</button>
+                    <button class="size-btn" data-size="M">M</button>
+                    <button class="size-btn" data-size="L">L</button>
+                    <button class="size-btn" data-size="XL">XL</button>
+                    <button class="size-btn" data-size="XXL">XXL</button>
+                </div>
+            </div>
+
+            <!-- Color Filter -->
+            <div class="filter-block">
+                <h3 class="filter-title">
+                    <i class="fas fa-palette"></i> Color
+                </h3>
+                <div class="color-options">
+                    <button class="color-btn" data-color="black" style="background: #000;" title="Black"></button>
+                    <button class="color-btn" data-color="white" style="background: #fff;" title="White"></button>
+                    <button class="color-btn" data-color="pink" style="background: #ff4d94;" title="Pink"></button>
+                    <button class="color-btn" data-color="gold" style="background: #d4af37;" title="Gold"></button>
+                    <button class="color-btn" data-color="red" style="background: #c0392b;" title="Red"></button>
+                    <button class="color-btn" data-color="blue" style="background: #2980b9;" title="Blue"></button>
+                </div>
+            </div>
+            
+            <!-- Additional Filters -->
+            <div class="filter-block">
+                <h3 class="filter-title">
+                    <i class="fas fa-star"></i> Special
+                </h3>
+                <label class="filter-checkbox">
+                    <input type="checkbox" id="onSaleFilter">
+                    <span class="checkmark"></span>
+                    <span>On Sale</span>
+                </label>
+                <label class="filter-checkbox">
+                    <input type="checkbox" id="newFilter">
+                    <span class="checkmark"></span>
+                    <span>New Arrivals</span>
+                </label>
+                <label class="filter-checkbox">
+                    <input type="checkbox" id="limitedFilter">
+                    <span class="checkmark"></span>
+                    <span>Limited Edition</span>
+                </label>
+            </div>
+
+            <!-- Clear All Button -->
+            <button class="clear-filters-btn" id="clearFilters">
+                <i class="fas fa-trash-alt"></i> Clear All Filters
+            </button>
         </aside>
-                <!-- Products Main Area Container -->
+
+        <!-- Products Main Area Container -->
         <div class="cat-products-area">
             
             <!-- Toolbar -->
@@ -149,11 +229,12 @@
                     </div>
                 </div>
             </div>
-                        <!-- Products Grid -->
+            
+            <!-- Products Grid -->
             <div class="products-grid" id="productsGrid">
                 
                 <!-- Product 1 -->
-                <div class="product-item" data-category="men" data-price="249" data-color="black" data-size="L" data-badge="new">
+                <div class="product-item" data-category="men" data-price="24999" data-color="black" data-size="L" data-badge="new">
                     <div class="product-img product-img-1">
                         <img src="./products/product_1/img_1.jpg" alt="Midnight Prestige Suit">
                         <span class="badge new">NEW</span>
@@ -173,11 +254,7 @@
                         <p class="product-cat">Men's Suit</p>
                         <h3 class="product-title">Midnight Prestige Suit</h3>
                         <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             <span>(45)</span>
                         </div>
                         <div class="product-price-row">
@@ -187,7 +264,7 @@
                 </div>
 
                 <!-- Product 2 -->
-                <div class="product-item" data-category="women" data-price="299" data-color="pink" data-size="M" data-badge="limited">
+                <div class="product-item" data-category="women" data-price="10369" data-color="pink" data-size="M" data-badge="limited">
                     <div class="product-img product-img-2">
                         <img src="./products/product_2/img_1.jpg" alt="Royal Noir Evening Gown">
                         <span class="badge limited">LIMITED</span>
@@ -201,18 +278,17 @@
                         <p class="product-cat">Evening Wear</p>
                         <h3 class="product-title">Royal Noir Evening Gown</h3>
                         <div class="product-rating">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             <span>(38)</span>
                         </div>
                         <div class="product-price-row">
-                            <span class="product-price">Rs. 10,369</span>
+                            <span class="product-price">LKR 10,369</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Product 3 -->
-                <div class="product-item" data-category="men" data-price="189" data-color="black" data-size="L" data-badge="sale">
+                <div class="product-item" data-category="men" data-price="23457" data-color="black" data-size="L" data-badge="sale">
                     <div class="product-img product-img-3">
                         <img src="./products/product_3/img_1.jpg" alt="Classic Elite Blazer">
                         <span class="badge sale">-30%</span>
@@ -226,21 +302,20 @@
                         <p class="product-cat">Blazer</p>
                         <h3 class="product-title">Classic Elite Blazer</h3>
                         <div class="product-rating">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i><i class="far fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
                             <span>(28)</span>
                         </div>
                         <div class="product-price-row">
-                            <span class="product-price">Rs. 23,457</span>
-                            <span class="product-price-old">Rs. 90,653</span>
+                            <span class="product-price">LKR 23,457</span>
+                            <span class="product-price-old">LKR 90,653</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Product 4 -->
-                <div class="product-item" data-category="accessories" data-price="159" data-color="black" data-size="M" data-badge="hot">
+                <div class="product-item" data-category="accessories" data-price="5384" data-color="black" data-size="M" data-badge="hot">
                     <div class="product-img product-img-4">
-                       <img src="./products/product_4/img_1.jpg" alt="Handbag Velvet Luxe Handbag">
+                       <img src="./products/product_4/img_1.jpg" alt="Velvet Luxe Handbag">
                         <span class="badge hot">HOT</span>
                         <div class="product-overlay">
                             <button class="overlay-btn wishlist-btn"><i class="far fa-heart"></i></button>
@@ -252,18 +327,17 @@
                         <p class="product-cat">Handbag</p>
                         <h3 class="product-title">Velvet Luxe Handbag</h3>
                         <div class="product-rating">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             <span>(52)</span>
                         </div>
                         <div class="product-price-row">
-                            <span class="product-price">Rs. 5,384</span>
+                            <span class="product-price">LKR 5,384</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Product 5 -->
-                <div class="product-item" data-category="women" data-price="199" data-color="white" data-size="S" data-badge="new">
+                <div class="product-item" data-category="women" data-price="66814" data-color="white" data-size="S" data-badge="new">
                     <div class="product-img product-img-5">
                         <img src="./products/product_5/img_1.jpg" alt="Ivory Silk Dress">
                         <span class="badge new">NEW</span>
@@ -277,20 +351,19 @@
                         <p class="product-cat">Dress</p>
                         <h3 class="product-title">Ivory Silk Dress</h3>
                         <div class="product-rating">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i><i class="far fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
                             <span>(19)</span>
                         </div>
                         <div class="product-price-row">
-                            <span class="product-price">Rs. 66,814</span>
+                            <span class="product-price">LKR 66,814</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Product 6 -->
-                <div class="product-item" data-category="formal" data-price="349" data-color="black" data-size="XL" data-badge="limited">
+                <div class="product-item" data-category="formal" data-price="23000" data-color="black" data-size="XL" data-badge="limited">
                     <div class="product-img product-img-6">
-                        <img src="./products/product_6/img_1.jpg" alt="TuxedoExecutieBlackTuxedo">
+                        <img src="./products/product_6/img_1.jpg" alt="Executive Black Tuxedo">
                         <span class="badge limited">LIMITED</span>
                         <div class="product-overlay">
                             <button class="overlay-btn wishlist-btn"><i class="far fa-heart"></i></button>
@@ -302,18 +375,17 @@
                         <p class="product-cat">Tuxedo</p>
                         <h3 class="product-title">Executive Black Tuxedo</h3>
                         <div class="product-rating">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             <span>(67)</span>
                         </div>
                         <div class="product-price-row">
-                            <span class="product-price">Rs. 23,000</span>
+                            <span class="product-price">LKR 23,000</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Product 7 -->
-                <div class="product-item" data-category="casual" data-price="89" data-color="pink" data-size="M" data-badge="sale">
+                <div class="product-item" data-category="casual" data-price="4499" data-color="pink" data-size="M" data-badge="sale">
                     <div class="product-img product-img-7">
                         <img src="./products/product_7/img_1.jpg" alt="Pink Blossom Top">
                         <span class="badge sale">-25%</span>
@@ -327,19 +399,18 @@
                         <p class="product-cat">Casual Top</p>
                         <h3 class="product-title">Pink Blossom Top</h3>
                         <div class="product-rating">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i><i class="far fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
                             <span>(22)</span>
                         </div>
                         <div class="product-price-row">
-                            <span class="product-price">Rs. 4,499</span>
-                            <span class="product-price-old">Rs. 5,499</span>
+                            <span class="product-price">LKR 4,499</span>
+                            <span class="product-price-old">LKR 5,499</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Product 8 -->
-                <div class="product-item" data-category="accessories" data-price="129" data-color="gold" data-size="M" data-badge="new">
+                <div class="product-item" data-category="accessories" data-price="7499" data-color="gold" data-size="M" data-badge="new">
                     <div class="product-img product-img-8">
                         <img src="./products/product_8/img_1.jpg" alt="Gold Cascade Necklace">
                         <span class="badge new">NEW</span>
@@ -353,18 +424,17 @@
                         <p class="product-cat">Jewelry</p>
                         <h3 class="product-title">Gold Cascade Necklace</h3>
                         <div class="product-rating">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             <span>(41)</span>
                         </div>
                         <div class="product-price-row">
-                            <span class="product-price">Rs. 7,499</span>
+                            <span class="product-price">LKR 7,499</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Product 9 -->
-                <div class="product-item" data-category="casual" data-price="79" data-color="blue" data-size="L">
+                <div class="product-item" data-category="casual" data-price="4999" data-color="blue" data-size="L">
                     <div class="product-img product-img-9">
                         <img src="./products/product_9/img_1.jpg" alt="Ocean Blue Casual Shirt">
                         <div class="product-overlay">
@@ -377,18 +447,17 @@
                         <p class="product-cat">Casual Shirt</p>
                         <h3 class="product-title">Ocean Blue Casual Shirt</h3>
                         <div class="product-rating">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i><i class="far fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
                             <span>(15)</span>
                         </div>
                         <div class="product-price-row">
-                            <span class="product-price">Rs. 4,999</span>
+                            <span class="product-price">LKR 4,999</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Product 10 -->
-                <div class="product-item" data-category="women" data-price="399" data-color="red" data-size="S" data-badge="hot">
+                <div class="product-item" data-category="women" data-price="69999" data-color="red" data-size="S" data-badge="hot">
                     <div class="product-img product-img-10">
                         <img src="./products/product_10/img_1.jpg" alt="Scarlet Rose Gown">
                         <span class="badge hot">HOT</span>
@@ -402,20 +471,19 @@
                         <p class="product-cat">Designer Dress</p>
                         <h3 class="product-title">Scarlet Rose Gown</h3>
                         <div class="product-rating">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             <span>(89)</span>
                         </div>
                         <div class="product-price-row">
-                            <span class="product-price">Rs. 69,999</span>
+                            <span class="product-price">LKR 69,999</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Product 11 -->
-                <div class="product-item" data-category="men" data-price="219" data-color="white" data-size="M">
+                <div class="product-item" data-category="men" data-price="3999" data-color="white" data-size="M">
                     <div class="product-img product-img-11">
-                        <img src="./products/product_11/img_1.jpg" alt="Formal Shirt Pearl White Formal Shirt">
+                        <img src="./products/product_11/img_1.jpg" alt="Pearl White Formal Shirt">
                         <div class="product-overlay">
                             <button class="overlay-btn wishlist-btn"><i class="far fa-heart"></i></button>
                             <button class="overlay-btn quick-view"><i class="fas fa-eye"></i></button>
@@ -426,18 +494,17 @@
                         <p class="product-cat">Formal Shirt</p>
                         <h3 class="product-title">Pearl White Formal Shirt</h3>
                         <div class="product-rating">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i><i class="far fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
                             <span>(31)</span>
                         </div>
                         <div class="product-price-row">
-                            <span class="product-price">Rs. 3,999</span>
+                            <span class="product-price">LKR 3,999</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Product 12 -->
-                <div class="product-item" data-category="formal" data-price="459" data-color="black" data-size="XL" data-badge="limited">
+                <div class="product-item" data-category="formal" data-price="54999" data-color="black" data-size="XL" data-badge="limited">
                     <div class="product-img product-img-12">
                         <img src="./products/product_12/img_1.jpg" alt="Diamond Elite Suit">
                         <span class="badge limited">LIMITED</span>
@@ -451,12 +518,11 @@
                         <p class="product-cat">Designer Suit</p>
                         <h3 class="product-title">Diamond Elite Suit</h3>
                         <div class="product-rating">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             <span>(103)</span>
                         </div>
                         <div class="product-price-row">
-                            <span class="product-price">Rs. 54,999</span>
+                            <span class="product-price">LKR 54,999</span>
                         </div>
                     </div>
                 </div>
@@ -482,80 +548,53 @@
             </div>
 
         </div>
+    </section>
 
-                    <!-- Price Range Filter -->
-            <div class="filter-block">
-                <h3 class="filter-title">
-                    <i class="fas fa-tag"></i>
-                    Price Range
-                </h3>
-                <div class="price-range">
-                    <div class="price-values">
-                        <span>$<span id="priceMin">0</span></span>
-                        <span>$<span id="priceMax">500</span></span>
+    <!-- Quick View Modal (From Commit 13) -->
+    <div class="modal-overlay" id="quickViewModal">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-body">
+                <div class="modal-img-container">
+                    <img src="" alt="Product" class="modal-main-img" id="modalImg">
+                </div>
+                <div class="modal-info">
+                    <p class="modal-cat" id="modalCat"></p>
+                    <h2 class="modal-title" id="modalTitle"></h2>
+                    <div class="modal-price" id="modalPrice"></div>
+                    <p class="modal-desc">Exquisite craftsmanship meets timeless design. This piece is tailored for those who appreciate the finer things in life, offering unparalleled comfort and style.</p>
+                    
+                    <div class="modal-options">
+                        <div class="option-group">
+                            <label>Size</label>
+                            <div class="size-options">
+                                <button class="size-btn">S</button>
+                                <button class="size-btn">M</button>
+                                <button class="size-btn">L</button>
+                            </div>
+                        </div>
                     </div>
-                    <input type="range" min="0" max="500" value="500" class="price-slider" id="priceSlider">
+                    
+                    <div class="modal-actions">
+                        <div class="qty-selector">
+                            <button class="qty-btn minus">-</button>
+                            <input type="number" value="1" class="qty-input">
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart-btn">
+                            <i class="fas fa-shopping-bag"></i> Add to Cart
+                        </button>
+                    </div>
                 </div>
             </div>
+        </div>
+    </div>
 
-            <!-- Size Filter -->
-            <div class="filter-block">
-                <h3 class="filter-title">
-                    <i class="fas fa-ruler"></i>
-                    Size
-                </h3>
-                <div class="size-options">
-                    <button class="size-btn" data-size="S">S</button>
-                    <button class="size-btn" data-size="M">M</button>
-                    <button class="size-btn" data-size="L">L</button>
-                    <button class="size-btn" data-size="XL">XL</button>
-                    <button class="size-btn" data-size="XXL">XXL</button>
-                </div>
-            </div>
-
-            <!-- Color Filter -->
-            <div class="filter-block">
-                <h3 class="filter-title">
-                    <i class="fas fa-palette"></i>
-                    Color
-                </h3>
-                <div class="color-options">
-                    <button class="color-btn" data-color="black" style="background: #000;" title="Black"></button>
-                    <button class="color-btn" data-color="white" style="background: #fff;" title="White"></button>
-                    <button class="color-btn" data-color="pink" style="background: #ff4d94;" title="Pink"></button>
-                    <button class="color-btn" data-color="gold" style="background: #d4af37;" title="Gold"></button>
-                    <button class="color-btn" data-color="red" style="background: #c0392b;" title="Red"></button>
-                    <button class="color-btn" data-color="blue" style="background: #2980b9;" title="Blue"></button>
-                </div>
-            </div>
-                        <!-- Additional Filters -->
-            <div class="filter-block">
-                <h3 class="filter-title">
-                    <i class="fas fa-star"></i>
-                    Special
-                </h3>
-                <label class="filter-checkbox">
-                    <input type="checkbox" id="onSaleFilter">
-                    <span class="checkmark"></span>
-                    <span>On Sale</span>
-                </label>
-                <label class="filter-checkbox">
-                    <input type="checkbox" id="newFilter">
-                    <span class="checkmark"></span>
-                    <span>New Arrivals</span>
-                </label>
-                <label class="filter-checkbox">
-                    <input type="checkbox" id="limitedFilter">
-                    <span class="checkmark"></span>
-                    <span>Limited Edition</span>
-                </label>
-            </div>
-
-            <!-- Clear All Button -->
-            <button class="clear-filters-btn" id="clearFilters">
-                <i class="fas fa-trash-alt"></i>
-                Clear All Filters
-            </button>
+    <!-- Toast Notification (From Commit 13) -->
+    <div class="toast-notification" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMsg">Action successful!</span>
+    </div>
 
     <script src="./categories.js"></script>
 </body>
