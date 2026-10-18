@@ -574,3 +574,75 @@ window.addEventListener('resize', () => {
         closeSidebar();
     }
 });
+
+
+function getUrlParameter(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+}
+
+// 2. Filter products automatically on page load if category URL param exists
+function loadCategoryFromURL() {
+    const categoryParam = getUrlParameter('category');
+    if (categoryParam) {
+        const targetCategory = categoryParam.toLowerCase();
+        const categoryItems = document.querySelectorAll('.category-item');
+        
+        categoryItems.forEach(item => {
+            if (item.getAttribute('data-category') === targetCategory) {
+                categoryItems.forEach(ci => ci.classList.remove('active'));
+                item.classList.add('active');
+                
+                // Trigger filter update
+                if (typeof filterProducts === 'function') {
+                    filterProducts();
+                }
+            }
+        });
+    }
+}
+
+// 3. Product Click Navigation to details page
+function initProductClicks() {
+    const productItems = document.querySelectorAll('.product-item');
+    
+    productItems.forEach((item, index) => {
+        const productId = index + 1;
+        
+        // Click on product image or title opens details page
+        const img = item.querySelector('.product-img img');
+        const title = item.querySelector('.product-title');
+        
+        const navigateToDetails = () => {
+            window.location.href = `product-details.html?id=${productId}`;
+        };
+        
+        if (img) img.addEventListener('click', navigateToDetails);
+        if (title) title.addEventListener('click', navigateToDetails);
+    });
+}
+
+// 4. Modal Add to Cart Action
+const modalAddToCartBtn = document.querySelector('.modal-actions .add-to-cart-btn');
+if (modalAddToCartBtn) {
+    modalAddToCartBtn.addEventListener('click', () => {
+        const toast = document.getElementById('toast');
+        const toastMsg = document.getElementById('toastMsg');
+        const modal = document.getElementById('quickViewModal');
+        
+        if (modal) modal.classList.remove('active');
+        
+        if (toast && toastMsg) {
+            toastMsg.textContent = 'Product added to cart!';
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    loadCategoryFromURL();
+    initProductClicks();
+});
