@@ -26,7 +26,9 @@ velvet-vogue/
 ├── index.html
 ├── style.css
 ├── script.js
+├── products
 └── image/
+
 ```
 
 ## 🚀 Live Demo
