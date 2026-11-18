@@ -58,6 +58,54 @@
             </div>
         </div>
     </section>
+
+        <section class="cart-main">
+        <div class="shipping-bar" id="shippingBar">
+            <div class="shipping-info">
+                <i class="fas fa-truck"></i>
+                <span id="shippingMessage">Add LKR 15,000 more for FREE shipping!</span>
+            </div>
+            <div class="shipping-progress">
+                <div class="shipping-progress-fill" id="shippingProgress"></div>
+            </div>
+        </div>
+
+        <div class="cart-container">
+            <div class="cart-items-section">
+                <div class="cart-items-header">
+                    <h2 class="section-title">
+                        Cart Items 
+                        <span class="items-count">(<span id="itemsCount">0</span> items)</span>
+                    </h2>
+                    <button class="clear-cart-btn" id="clearCartBtn">
+                        <i class="fas fa-trash-alt"></i>
+                        Clear Cart
+                    </button>
+                </div>
+
+                <div class="cart-items-list" id="cartItemsList">
+                </div>
+
+                <div class="empty-cart" id="emptyCart" style="display: none;">
+                    <div class="empty-cart-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <h3>Your Cart is Empty</h3>
+                    <p>Looks like you haven't added anything to your cart yet.</p>
+                    <a href="categories.html" class="continue-shopping-btn">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Continue Shopping</span>
+                    </a>
+                </div>
+
+                <a href="categories.html" class="continue-link" id="continueLink">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Continue Shopping</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    
     <script src="./cart.js"></script>
 </body>
 </html>
